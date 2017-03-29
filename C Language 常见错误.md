@@ -83,3 +83,13 @@ undefined reference to ....
 ```
 
 ​	点击全部重新编译即可
+
+
+
+10. ​
+
+    `MakeFile` 出错
+
+    缺乏 `main()` 
+
+    囊括了多个 `main()` 
