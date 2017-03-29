@@ -74,6 +74,8 @@
 
 ​    `struct` 定义在 `#ifndef` 中
 
+​    没有包含对应的头文件
+
 
 
 9. ​
@@ -88,8 +90,8 @@ undefined reference to ....
 
 10. ​
 
-    `MakeFile` 出错
+   `MakeFile` 出错
 
-    缺乏 `main()` 
+   缺乏 `main()` 
 
-    囊括了多个 `main()` 
+   囊括了多个 `main()` 
