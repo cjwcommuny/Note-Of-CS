@@ -631,3 +631,11 @@ printf("%d ", pointer);
 ```
 
 这样编译器竟然不会报错
+
+
+
+42. `double fabs(double x)` 是 `math.h` 中的绝对值函数
+
+
+
+43. 运用 `setjmp()` 和 `longjmp()` 时，`setjmp()` 要先调用
