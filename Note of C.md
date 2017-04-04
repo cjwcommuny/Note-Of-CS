@@ -639,3 +639,4 @@ printf("%d ", pointer);
 
 
 43. 运用 `setjmp()` 和 `longjmp()` 时，`setjmp()` 要先调用
+44. 函数返回指针时，注意内存是否在函数内分配，可能要用 `static`

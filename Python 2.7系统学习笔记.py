@@ -52,11 +52,18 @@
     abs()
     pow(,)
     raw_input()
-    repr(string)
+    repr(string) 将任何对象转换成供解释器阅读的字符串形式(即加上'')
     round()
     range(m, n) #产生[m,n)的元组
         range(n) #产生[0,n)的元组
         xrange()
+    zip(sequence1, sequence2) #将两个序列压缩返回元组,处理不等长序列时，处理完短的为止
+    enumerate(sequence) #返回索引-值 对
+    vars()
+    globals()
+    map(function, iterable) 将函数逐个作用于可迭代对象的元素
+    filter(function, iterable) 将函数(这个函数必须返回布尔值)作用于可迭代对象的元素。如果元素符合则放入列表(?)返回否则不返回
+    issubclass(class1, class2) 判断class1 是否是 class2 的子类
     math 
         ceil()
         floor()
@@ -303,28 +310,96 @@
             dict1.setdefault(key, result) 返回与键关联的值，若无返回result(若不设置返回None)，并更新字典
             dict1.update(item) 用一个字典项更新字典，若有相同的键会被覆盖 
 
-
-条件语句
-    False, None, 0, 空序列, 空字典 布尔值为 0; 其余为 1
-    eg:
-        if ConditionExpression:
-            body
-        elif:
-            body
-        else:
-            body
-循环语句
-    while 循环
-        while condition:
-            body
-    for 循环(按次序迭代可迭代对象)
-        循环遍历字典
-            for key in dict1:
+语句
+    条件语句
+        False, None, 0, 空序列, 空字典 布尔值为 0; 其余为 1
+        eg:
+            if ConditionExpression:
                 body
-        并行迭代
-            #read here!
+            elif:
+                body
+            else:
+                body
+    循环语句
+        while 循环
+            while condition:
+                body
+        for 循环(按次序迭代可迭代对象)
+            循环遍历字典
+                for key in dict1:
+                    body
+            eg:
+                for i in range(100): #0~100 进行迭代
+                    body
+            并行迭代
+                for a, b in zip(seq1, seq2):
+                    body
+            按索引迭代
+                for 
+            翻转和排序迭代
+            列表推导式
+                eg:
+                    [x*x for x in range(10)]
+                eg:
+                    [(x,y) for x in range(3) for y in range(3)]
+    pass 语句 (python中空代码块是非法的)
+    del 语句 
+        eg:
+            >>>x = 1
+            >>>del x #删掉x这个名字(对象若无其他引用也会由于垃圾收集被删除)
+    exec 语句
+    eval 
+
+
+
+
         
         
     
+
+
 断言
     assert condition "explanation" #若条件不满足则退出程序，且打印explanation
+函数
+    定义
+        def function(argument):
+            'explanation' #用于说明函数的文档
+            body
+            return 
+    参数
+        位置参数
+        关键字参数
+        收集参数
+            定义时，参数之前加上一个星号，把剩余参数收集到一个元组中
+                加上两个星号则，返回的是字典，可以处理关键字参数
+            调用时，参数加星号或双星号时收集参数的逆过程
+    变量
+        函数内部声明全局变量
+            eg:
+                global x
+
+表达式：
+    lambda
+
+
+继承
+    多重继承
+类
+    类的定义
+        eg:
+            class A:
+
+                def method(self, argument):
+                    body
+        eg:
+            class A:
+
+                def __method(self, argument): #让方法私有化，外部无法访问
+                    body
+    特性
+        __bases__ 知道已知类的基类
+        __class__ 知道一个对象属于哪一个类
+
+魔法方法
+    __init__() 在创建类时就初始化执行该方法
+    __del__() 当对象被垃圾回收时调用
